@@ -1,0 +1,29 @@
+package org.meltwater.spellchecker;
+
+import java.io.*;
+public class WriteToFile {
+	
+	public WriteToFile() {
+
+	}
+
+	public void write(String content) {
+		
+		try {
+			//content = "mispelled words";
+			File output = new File("writing.txt");
+
+			if (!output.exists()) {
+				// file.createNewFile();
+			}
+
+			FileWriter fw = new FileWriter(output.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(content);
+			bw.close();
+			System.out.println("Done");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
